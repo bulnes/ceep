@@ -1,6 +1,8 @@
 import { useState } from "react";
+
 import Form from "./components/Form";
 import NotesList from "./components/NotesList";
+import Categories from "./components/Categories";
 
 import "./assets/styles/App.css";
 
@@ -19,7 +21,10 @@ function App() {
   return (
     <section className="conteudo">
       <Form createNote={createNote} />
-      <NotesList notes={notes} deleteNote={deleteNote} />
+      <main className="conteudo-principal">
+        <Categories />
+        <NotesList notes={notes} deleteNote={deleteNote} />
+      </main>
     </section>
   );
 }
