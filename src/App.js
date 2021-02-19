@@ -8,6 +8,7 @@ import "./assets/styles/App.css";
 
 function App() {
   const [notes, setNote] = useState([]);
+  const [categories, setCategory] = useState([]);
 
   function createNote(title, description) {
     setNote([...notes, { title, description }]);
@@ -18,12 +19,16 @@ function App() {
     setNote([...notes]);
   }
 
+  function createCategory(name) {
+    setCategory([...categories, name]);
+  }
+
   return (
     <section className="conteudo">
       <Form createNote={createNote} />
       <main className="conteudo-principal">
-        <Categories />
-        <NotesList notes={notes} deleteNote={deleteNote} />
+        <Categories categories={categories} add={createCategory} />
+        <NotesList notes={notes} remove={deleteNote} />
       </main>
     </section>
   );
