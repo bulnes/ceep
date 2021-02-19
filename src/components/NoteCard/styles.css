@@ -27,6 +27,7 @@
 }
 
 .card-nota_icon {
+  height: 20px;
   width: 15px;
   cursor: pointer;
 }

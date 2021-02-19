@@ -11,10 +11,15 @@ function App() {
     setNote([...notes, { title, description }]);
   }
 
+  function deleteNote(index) {
+    notes.splice(index, 1);
+    setNote([...notes]);
+  }
+
   return (
     <section className="conteudo">
       <Form createNote={createNote} />
-      <NotesList notes={notes} />
+      <NotesList notes={notes} deleteNote={deleteNote} />
     </section>
   );
 }
