@@ -10,8 +10,8 @@ function App() {
   const [notes, setNote] = useState([]);
   const [categories, setCategory] = useState([]);
 
-  function createNote(title, description) {
-    setNote([...notes, { title, description }]);
+  function createNote(title, description, category) {
+    setNote([...notes, { title, description, category }]);
   }
 
   function deleteNote(index) {
@@ -25,7 +25,8 @@ function App() {
 
   return (
     <section className="conteudo">
-      <Form createNote={createNote} />
+      <Form createNote={createNote} categories={categories} />
+
       <main className="conteudo-principal">
         <Categories categories={categories} add={createCategory} />
         <NotesList notes={notes} remove={deleteNote} />

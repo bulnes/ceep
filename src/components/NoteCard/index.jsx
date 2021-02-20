@@ -13,6 +13,7 @@ function NoteCard({ note, noteId, remove }) {
       <header className="card-nota_cabecalho">
         <h3 className="card-nota_titulo">{note.title}</h3>
         <DeleteSVG alt="Excluir nota" className="card-nota_icon" onClick={removeById} />
+        <h4>{note.category}</h4>
       </header>
       <p className="card-nota_texto">{note.description}</p>
     </section>
